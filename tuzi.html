@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .tu {
+        display: block;
+        position: absolute;
+        left: 200px;
+        top: 200px;
+        animation: an 800ms linear infinite;
+    }
+    
+    @keyframes an {
+        0% {
+            transfor: translate(0px, 0px);
+        }
+        30% {
+            transform: translate(-70px, -100px);
+        }
+        70% {
+            transform: translate(-100px, 0px);
+        }
+        100% {
+            transform: translate(0px 0px);
+        }
+    }
+</style>
+
+<body>
+    <canvas class="tu box" width="300px" height="200px"></canvas>
+    <script>
+        var canvas = document.querySelector('.tu');
+        var huabi = canvas.getContext('2d');
+        huabi.beginPath();
+        huabi.moveTo(106, 100);
+        huabi.bezierCurveTo(106, 100, 129, 52, 176, 12);
+        huabi.bezierCurveTo(176, 12, 182, 11, 182, 21);
+        huabi.bezierCurveTo(182, 21, 172, 52, 143, 85);
+        huabi.lineCap = 'red'
+        huabi.stroke()
+
+        huabi.beginPath();
+        huabi.moveTo(125, 97);
+        huabi.bezierCurveTo(125, 97, 95, 101, 62, 135);
+        huabi.bezierCurveTo(62, 135, 61, 146, 63, 155);
+        huabi.bezierCurveTo(63, 155, 75, 170, 94, 175);
+        huabi.bezierCurveTo(94, 175, 124, 165, 150, 116);
+        huabi.bezierCurveTo(150, 116, 206, 78, 244, 47);
+        huabi.bezierCurveTo(244, 47, 246, 39, 245, 30);
+        huabi.bezierCurveTo(245, 30, 241, 28, 236, 28);
+        huabi.bezierCurveTo(236, 28, 191, 52, 126, 97);
+        huabi.lineCap = 'red'
+        huabi.stroke()
+
+        huabi.beginPath();
+        huabi.moveTo(175, 100);
+        huabi.bezierCurveTo(175, 100, 206, 92, 220, 94);
+        huabi.bezierCurveTo(220, 94, 237, 104, 246, 118);
+        huabi.bezierCurveTo(246, 118, 257, 117, 265, 122);
+        huabi.bezierCurveTo(265, 122, 267, 127, 267, 131);
+        huabi.bezierCurveTo(267, 131, 262, 138, 254, 141);
+        huabi.bezierCurveTo(254, 141, 255, 153, 255, 153);
+        huabi.bezierCurveTo(255, 153, 230, 172, 191, 179);
+        huabi.bezierCurveTo(191, 179, 189, 177, 189, 173);
+        huabi.bezierCurveTo(189, 173, 204, 158, 219, 144);
+        huabi.lineCap = 'red'
+        huabi.stroke()
+
+        huabi.beginPath();
+        huabi.moveTo(69, 165);
+        huabi.bezierCurveTo(69, 165, 64, 170, 63, 171);
+        huabi.bezierCurveTo(63, 175, 65, 177, 67, 180);
+        huabi.bezierCurveTo(67, 180, 80, 181, 84, 173);
+        huabi.bezierCurveTo(84, 173, 85, 180, 88, 183);
+        huabi.bezierCurveTo(88, 183, 109, 182, 130, 174);
+        huabi.bezierCurveTo(130, 174, 162, 179, 188, 176);
+        huabi.lineCap = 'red'
+        huabi.stroke()
+
+        huabi.beginPath();
+        huabi.arc(80, 159, 5, 10, 0 / 360 * Math.PI, false)
+            /* huabi.lineCap = 'red' */
+        huabi.stroke()
+
+        huabi.beginPath();
+        huabi.arc(102, 135, 10, 10, 0 / 360 * Math.PI, true)
+
+        huabi.strokestyle = "blue";
+        huabi.stroke()
+
+        huabi.beginPath();
+        huabi.arc(103, 133, 5, 10, 0 / 360 * Math.PI, true)
+        huabi.fill();
+        huabi.strokestyle = "#FFFFFF";
+        huabi.stroke()
+
+        var box = document.querySelector('.box');
+        console.log(box);
+        document.onkeydown = function(e) {
+            var e = e || window.event;
+            console.log(e.keyCode);
+            switch (e.keyCode) {
+                case 38:
+                    box.style.top = box.offsetTop - 5 + 'px';
+                    break;
+                case 40:
+                    box.style.top = box.offsetTop + 5 + 'px';
+                    break;
+                case 37:
+                    box.style.left = box.offsetLeft - 5 + 'px';
+                    break;
+                case 39:
+                    box.style.left = box.offsetLeft + 5 + 'px';
+                    break;
+                    return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
